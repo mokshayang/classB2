@@ -27,7 +27,6 @@
 function reset(){
     $('#acc,#pw').val("");
 }
-
 function login(){
     let user = {
         'acc' : $('#acc').val(),
