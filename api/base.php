@@ -122,7 +122,7 @@ class DB
 //這裡是第二題 :
 $Bottom=new DB('bottom');
 $Title=new DB('title');
-$Ad=new DB('ad');
+$admin=new DB('admin');
 $Total=new DB('total');
 
 
@@ -143,11 +143,11 @@ function q($sql){
 if(!isset($_SESSION['total'])){
     $today=$Total->find(['date'=>date("Y-m-d")]);//看今天有無符合資料庫的資料
     // echo "total=";
-    // dd($today);
-    
+    // dd($today); 
     if(empty($today)){
-        $today=['date'=>date("Y-m-d"),'total'=>1];//如果沒有 寫入date()與total+1 資料庫
-        // $Total->$save(['date'=>date("Y-m-d"),'total'=>1]);
+        $today=['date'=>date("Y-m-d"),'total'=>1];
+        //如果沒有 寫入date()與total+1 資料庫
+        //$Total->$save(['date'=>date("Y-m-d"),'total'=>1]);
     }else{
         $today['total']++;//如果有把 total +1 寫入 :
     }
