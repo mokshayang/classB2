@@ -27,6 +27,7 @@
 function reset(){
     $('#acc,#pw').val("");
 }
+
 function login(){
     let user = {
         'acc' : $('#acc').val(),
@@ -34,12 +35,33 @@ function login(){
     }
     // console.log(user);
     //ajax
-    $.post("./api/chk.php".user,(result)=>{
-        if(parseInt(result)===1){   //parseInt 解析為數字 需用3個 === 辦別型別
+    $.post("./api/chk_acc.php",user,(result)=>{
+        console.log(result);//看是否有回傳
+        if(parseInt(result)===1){   //parseInt 解析為數字 需用3個 === 辦別型別 //檢查一次
+            //有此帳號時 : 
             
+            $.post("./api/chk_pw.php",user,(result)=>{//帳號正確時，檢查密碼 ajax
+                console.log(result);
+                if(parseInt(result)===1){
+                    //密碼正確
+
+                    if(user.acc === 'admin'){ // 管理者帳號
+                        location.href = "back.php";
+                    }else{
+                        location.href = "index.php";
+                    }
+
+                }else{
+                    alert('密碼錯誤');
+                    reset();//順便清空
+                }//end passward
+
+            })//acc check end
+
         }else{
 
             alert('查無帳號');
+            reset();//順便清空
         }
     })
 }

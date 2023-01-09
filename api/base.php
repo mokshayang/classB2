@@ -121,7 +121,7 @@ class DB
 
 //這裡是第二題 :
 $Bottom=new DB('bottom');
-$Title=new DB('title');
+$User=new DB('user');
 $admin=new DB('admin');
 $Total=new DB('total');
 
