@@ -2,10 +2,10 @@
 <fieldset style="width:fit-content; margin:auto;">
     <legend>會員登入</legend>
     <div>帳號 :
-        <input type="text" name="acc" id="acc">
+        <input type="text" name="acc" id="acc" >
     </div>
     <div>密碼 :
-        <input type="password" name="pw" id="pw">
+        <input type="password" name="pw" id="pw" >
     </div>
 
     <div style="margin-top: 20px;">
@@ -39,7 +39,7 @@ function login(){
         console.log(result);//看是否有回傳
         if(parseInt(result)===1){   //parseInt 解析為數字 需用3個 === 辦別型別 //檢查一次
             //有此帳號時 : 
-            
+            //有此帳號時 去檢查密碼 ajax : 
             $.post("./api/chk_pw.php",user,(result)=>{//帳號正確時，檢查密碼 ajax
                 console.log(result);
                 if(parseInt(result)===1){

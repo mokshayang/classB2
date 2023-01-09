@@ -48,7 +48,25 @@
 						請民眾踴躍投稿電子報，讓電子報成為大家相互交流、分享園地!詳見最新文章
 					</marquee>
 					<span style="width:18%; display:inline-block;">
-						<a href="?do=login">會員登入</a>
+						<?php
+						if (isset($_SESSION['login'])) {
+							if ($_SESSION['login'] == "admin") {
+						?>
+								<!-- 管理者區 -->
+								歡迎 ，<?= $_SESSION['login'] ?>
+								<button><a href="back.php"> 管理</a></button>
+								<button><a href="./api/logout.php">登出</a></button>
+
+							<?php } else {	?>
+								<!-- 非管理者區 --- 即一般會員 -->
+								歡迎 ，<?= $_SESSION['login'] ?>
+								<button><a href="./api/logout.php">登出</a></button>
+							<?php }
+						} else { ?>
+							<!-- 非管會員區 -->
+							<a href="?do=login">會員登入</a>
+							
+						<?php }  ?>
 					</span>
 
 					<div class="">
