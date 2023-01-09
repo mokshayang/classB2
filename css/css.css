@@ -173,7 +173,7 @@ input[type=radio]
 	border-right:#666 1px solid;
 	border-left:none;
 	margin:0px;
-	float:left;
+	/* float:left; */
 	display:inline-block;
 	background:#CCC;
 	margin:0px;
@@ -252,10 +252,10 @@ input[type=radio]
 	min-width:30px;
 	min-height:30px;
 }
-.tab
+/* .tab
 {
 	width:80%;
-}
+} */
 .nbcent
 {
 	margin-left:auto;

@@ -9,7 +9,8 @@
     function forgot(){
         console.log(123);
         $.get("./api/forgot.php",{email:$("#email").val()},(result)=>{
-            $('#result').html(result);
+            $('#result').text(result);
+            // $('#result').html(result);//兩個都可以
         })
     }
 

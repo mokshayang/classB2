@@ -62,6 +62,7 @@
 								歡迎 ，<?= $_SESSION['login'] ?>
 								<button><a href="./api/logout.php">登出</a></button>
 							<?php }
+							
 						} else { ?>
 							<!-- 非管會員區 -->
 							<a href="?do=login">會員登入</a>
