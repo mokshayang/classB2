@@ -7,10 +7,12 @@
         cursor: pointer;
         background: #eee;
     }
-    .active{
+
+    .active {
         background-color: #fff;
         border-bottom: white;
     }
+
     .box {
         width: 95%;
         border: 1px solid gray;
@@ -24,6 +26,7 @@
     <div class="tab">癌症防治</div>
     <div class="tab">慢性病防治</div>
 </div>
+div.box*2>h3>pre
 
 
 <div class="box">
@@ -134,10 +137,13 @@
     $('.tab').eq().addClass('active');
     $('box').hide();
     $('box').eq(0).show();
+    //箭頭函式 底下的 $(this) 指的是 整個document
+    //可以改用 帶參數e 則 e.target 就是click Object
 
     // $('.tab').on('click',function(){
     //     console.log($(this).index(),$(this).text());
     // })
+
     $('.tab').on('click', (e) => {
         console.log(e);
         // console.log($(e.target).index(),$(e.target).text());
