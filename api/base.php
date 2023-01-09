@@ -118,24 +118,13 @@ class DB
         return $this->pdo->query($sql)->fetchColumn();
     }
 }
-// $test = new DB('bottom');
-// // $math = $test->avg('id', ['id'=>2]," order by id" );
-// $math = $test->max('id',['bottom' => 'test'], "in(2,3)");
-// dd($math);
 
-// switch($_POST['table']){
-//     case "Title";
-//     $db=new DB("title");
-//     break;
-// }
-
-// dd(${$_POST['table']});
 //這裡是第二題 :
 $Bottom=new DB('bottom');
 $Title=new DB('title');
 $Ad=new DB('ad');
-$Mvim=new DB('mvim');
-$Image=new DB('image');
+$Total=new DB('total');
+
 
 function dd($array)
 {
@@ -145,4 +134,23 @@ function dd($array)
 }
 function to($url){
    header("location:".$url);
+}
+function q($sql){
+    $pdo =  new PDO("mysql:host=localhost;charset=utf8;dbname=db15_2",'root','');
+    return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+}
+//今日瀏覽人氣 :
+if(!isset($_SESSION['total'])){
+    $today=$Total->find(['date'=>date("Y-m-d")]);//看今天有無符合資料庫的資料
+    // echo "total=";
+    // dd($today);
+    
+    if(empty($today)){
+        $today=['date'=>date("Y-m-d"),'total'=>1];//如果沒有 寫入date()與total+1 資料庫
+        // $Total->$save(['date'=>date("Y-m-d"),'total'=>1]);
+    }else{
+        $today['total']++;//如果有把 total +1 寫入 :
+    }
+    $Total->save($today);
+    $_SESSION['total']=1;
 }
