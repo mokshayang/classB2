@@ -124,6 +124,7 @@ $Bottom=new DB('bottom');
 $User=new DB('user');
 $admin=new DB('admin');
 $Total=new DB('total');
+$News=new DB('news');
 
 
 function dd($array)
