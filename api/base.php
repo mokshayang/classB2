@@ -125,6 +125,7 @@ $User=new DB('user');
 $admin=new DB('admin');
 $Total=new DB('total');
 $News=new DB('news');
+$Que=new DB('que');
 
 
 function dd($array)

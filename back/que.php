@@ -22,7 +22,7 @@
         let opt =`
                 <div>
                     <label>選項</label>
-                    <input type="text" name="optAdd[]" id="">
+                    <input type="text" name="option[]" id="">
                 </div>
                 `;
         $('.options').append(opt);
