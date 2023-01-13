@@ -18,6 +18,7 @@
 	</div>
 	<iframe name="back" style="display:none;"></iframe>
 	<div id="all">
+	
 
 		<div id="title">
 			<?= date("m") ?> 月 <?= date("d") ?> 號 <?= date("l") ?> |

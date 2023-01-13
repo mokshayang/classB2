@@ -45,7 +45,7 @@ function login(){
                     //密碼正確
 
                     if(user.acc === 'admin'){ // 管理者帳號
-                        location.href = "back.php";
+                        location.href = "back.php?=admin";
                     }else{
                         location.href = "index.php";
                     }
