@@ -15,7 +15,7 @@ $rows=$User->all();
     ?>
     <tr>
         <td><?=$row['acc']?></td>
-        <td><?=str_replace("*", strlen($row['pw']) )?></td>
+        <td><?=str_replace(" ","*", strlen($row['pw']) )?></td>
         <td><input type="checkbox" name="del[]" value="<?=$row['id']?>" ></td>
     </tr>
     <?php } ?>
