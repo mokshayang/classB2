@@ -17,9 +17,15 @@
     <span class="good">讚</span>
 </body>
 </html>
+<style>
+    .co{
+        color:red;
+    }
+</style>
 <script>
     $(".good").on('click',function(){
-        $(this).css({'color':'red'})
+        $(this).toggleClass('co');
+        $(this).toggleClass('co');
 
         let user = ($(".user").text()*1);
         console.log(user);
@@ -27,3 +33,4 @@
 
     })
 </script>
+$
